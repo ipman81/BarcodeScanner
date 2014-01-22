@@ -4,7 +4,7 @@
 #include <opencv2/opencv.hpp>
 #define WHITEBAR 255
 #define BLACKBAR 0
-#define UNEQUALTOKENCOUNTER 10
+#define EQUALTOKENCOUNTER 10
 #define UNEQUALEQUALTOKENCOUNTER 20
 #define BLOCKOFFOUR 4
 #define NUMBERIS7BITS 7
