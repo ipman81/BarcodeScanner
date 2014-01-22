@@ -12,7 +12,7 @@ BarcodeAnalyser::~BarcodeAnalyser(void)
 }
 
 //Codingtable
-const int UNEQUALTOKEN[UNEQUALTOKENCOUNTER][BLOCKOFFOUR] =
+const int EQUALTOKEN[EQUALTOKENCOUNTER][BLOCKOFFOUR] =
 {
     //Right
     {3, 2, 1, 1}, // 0
@@ -156,7 +156,7 @@ int BarcodeAnalyser::calculateBarsInToken(int readedBars[], int widthOfBar, int 
     }
     
     //take the corresponding codingtable 
-    int counter =  ((leftOrRight == LEFT) ? UNEQUALEQUALTOKENCOUNTER : UNEQUALTOKENCOUNTER);
+    int counter =  ((leftOrRight == LEFT) ? UNEQUALEQUALTOKENCOUNTER : EQUALTOKENCOUNTER);
     
     //calculate values
     for (int i = 0; i < counter; i++)
@@ -165,7 +165,7 @@ int BarcodeAnalyser::calculateBarsInToken(int readedBars[], int widthOfBar, int 
         int goal = 0;
         for (int z = 0; z < BLOCKOFFOUR; z++)
         {
-            tokens[z] = (leftOrRight == LEFT ? UNEQUALEQUALTOKEN[i][z] : UNEQUALTOKEN[i][z]);
+            tokens[z] = (leftOrRight == LEFT ? UNEQUALEQUALTOKEN[i][z] : EQUALTOKEN[i][z]);
             int founded = readedBars[z];
             int needed = tokens[z] * widthOfBar;
             if (founded == needed)
