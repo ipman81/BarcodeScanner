@@ -100,6 +100,7 @@ int BarcodeAnalyser::readBars(Mat& image, Point &currentPosition, int widthOfBar
             }
             else
             {
+                tokens[counterPositionOfTokenArray] = 1;
                 otherColor = switchingEqualColors(image.at<uchar>(currentPosition.y,currentPosition.x), otherColor);
             }
         }
