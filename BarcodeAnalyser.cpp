@@ -193,7 +193,7 @@ int BarcodeAnalyser::calculateBarsInToken(int readedBars[], int widthOfBar, int 
 void BarcodeAnalyser::skipBarOrWhiteSpace(Mat& image, Point &currentPosition)
 {
     //0 or 255 color
-    int valueOfX = image.at<uchar>(currentPosition.y,currentPosition.x);
+    int valueOfX = getColorOfBar(image, currentPosition);
     
     while (image.at<uchar>(currentPosition.y,currentPosition.x) == valueOfX)
     {
